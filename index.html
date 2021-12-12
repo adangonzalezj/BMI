@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript">
+    function calcBMI () {
+        var feet=Number(document.getElementById("heightft").value);
+        var inch=Number(document.getElementById("heightin").value);
+        var weight=Number(document.getElementById("weight").value);
+        var height=(feet*12)+inch;
+        height/=39.3700787;
+        weight/=2.20462;
+        var BMI=weight/Math.pow(height,2);
+        document.getElementById("output").innerHTML=BMI;
+    }
+
+</script>
+<body>
+    <body style="background-color:#D3D3D3; width:50%;">
+        
+        <h2 style="color:#7D2D7E">BMI Calculator</h2>
+        <p>Height(ft) :
+        <input type="number" id="heightft" name="heightft">
+        </p>
+        <p>Height(in):
+        <input type="number" id="heightin" name="heightin">
+        </p>
+        <p>Weight:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number" id="weight" name="weight">
+        </p>
+        <p>
+        <button id="submit" name="submit" onclick="calcBMI()">Calc BMI</button>
+        <button id="clear" name="clear">Clear</button>
+        </p>
+        
+        <h3> BMI:<span id="output"></span></h3>
+    
+</body>
+</html>
